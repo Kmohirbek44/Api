@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+        <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h5 class="card-title text-center">Siz {{ user }} akauntidasiz</h5>
+            <form action="" method="POST">{% csrf_token %}
+
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="submit">
+    </form>
+            <form action="{% url 'accounts:delete' %} " method="POST">{% csrf_token %}
+
+
+        <input type="submit" class="btn btn-danger" value="delete">
+    </form>
+        </div>
+    </div>
+{% endblock %}
